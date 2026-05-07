@@ -1,0 +1,41 @@
+.root {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 10px 14px;
+  font: inherit;
+  color: var(--text-0);
+  background: transparent;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease,
+    box-shadow 160ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.primary {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.92), rgba(45, 225, 194, 0.22));
+  border-color: rgba(124, 92, 255, 0.36);
+  box-shadow: 0 12px 32px rgba(124, 92, 255, 0.18);
+}
+
+.ghost {
+  background: rgba(8, 12, 26, 0.55);
+  border-color: rgba(130, 160, 255, 0.18);
+}
+
+.root:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(124, 92, 255, 0.22);
+}
+
+.root:active {
+  transform: translateY(0px);
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.32), 0 14px 36px rgba(124, 92, 255, 0.22);
+}
