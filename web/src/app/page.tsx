@@ -20,7 +20,15 @@ const steps: PathStep[] = [
   { id: "s4", title: "运算符", slug: "ops", status: "locked", meta: "解锁条件：完成上一节" },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const base = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8000";
+  let apiOnline = false;
+  try {
+    const res = await fetch(`${base}/health`, { cache: "no-store" });
+    apiOnline = res.ok;
+  } catch {
+    apiOnline = false;
+  }
   const prompt =
     "award-winning editorial 3d render, dark minimal learning platform dashboard, subtle neon accent lines, glassmorphism panels, cinematic lighting, soft grain texture, high contrast, no text, no logos, wide angle, ultra detailed";
   const artUrl =
@@ -34,7 +42,7 @@ export default function Home() {
       <Container className={styles.container}>
         <section className={styles.hero}>
           <div className={styles.heroText}>
-            <div className={styles.kicker}>PATH MODE</div>
+            <div className={styles.kicker}>PATH MODE · API {apiOnline ? "ONLINE" : "OFFLINE"}</div>
             <h1 className={styles.heroTitle}>把学习变成一条能通关的路线</h1>
             <p className={styles.heroDesc}>
               你只需要做两件事：按关卡推进、把错题复盘到会。系统负责把顺序、进度、题目联起来。
