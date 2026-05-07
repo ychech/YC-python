@@ -1,0 +1,105 @@
+.root {
+  border-radius: var(--radius-2);
+  border: 1px solid var(--border);
+  background: rgba(8, 10, 18, 0.46);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.header {
+  padding: var(--s-4) var(--s-4) 10px var(--s-4);
+}
+
+.title {
+  font-weight: 740;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin-top: 8px;
+  color: rgba(235, 242, 255, 0.6);
+  font-size: 13px;
+}
+
+.track {
+  padding: var(--s-4);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(200px, 1fr);
+  gap: 14px;
+  overflow-x: auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+}
+
+.dot_done {
+  background: rgba(55, 214, 122, 0.92);
+  box-shadow: 0 0 0 3px rgba(55, 214, 122, 0.14);
+}
+
+.dot_doing {
+  background: rgba(124, 92, 255, 0.92);
+  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.16);
+}
+
+.dot_todo {
+  background: rgba(235, 242, 255, 0.26);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+.dot_locked {
+  background: rgba(235, 242, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.03);
+}
+
+.connector {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+}
+
+.card {
+  padding: 14px 14px;
+  border-radius: var(--radius-2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+  min-height: 92px;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(124, 92, 255, 0.22);
+  background: linear-gradient(180deg, rgba(124, 92, 255, 0.12), rgba(255, 255, 255, 0));
+}
+
+.stepTitle {
+  font-weight: 650;
+  color: rgba(235, 242, 255, 0.86);
+  letter-spacing: -0.01em;
+}
+
+.stepMeta {
+  margin-top: 10px;
+  color: rgba(235, 242, 255, 0.56);
+  font-size: 13px;
+}
+
