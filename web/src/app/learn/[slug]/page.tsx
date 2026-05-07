@@ -3,6 +3,7 @@ import { AppShell } from "@/components/AppShell/AppShell";
 import { Card } from "@/components/Card/Card";
 import { CommandBar } from "@/components/CommandBar/CommandBar";
 import { NeonButton } from "@/components/NeonButton/NeonButton";
+import { PracticeDrawer } from "@/components/PracticeDrawer/PracticeDrawer";
 import { SidebarTree } from "@/components/SidebarTree/SidebarTree";
 import { findKnowledgeBySlug } from "@/lib/knowledge";
 import styles from "./page.module.css";
@@ -65,7 +66,7 @@ export default async function LearnPage({ params }: { params: Promise<{ slug: st
                 <Link href="/playground">
                   <NeonButton tone="ghost">运行示例</NeonButton>
                 </Link>
-                <NeonButton>开始练习</NeonButton>
+                <PracticeDrawer title={title} />
               </div>
             </div>
           </Card.Header>

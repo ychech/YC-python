@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/Card/Card";
+import { ChapterMap, type Chapter } from "@/components/ChapterMap/ChapterMap";
 import { CommandBar } from "@/components/CommandBar/CommandBar";
 import { Container } from "@/components/Container/Container";
 import { NeonButton } from "@/components/NeonButton/NeonButton";
-import { PathMap, type PathStep } from "@/components/PathMap/PathMap";
 import styles from "./page.module.css";
 
 const tasks = [
@@ -13,11 +13,43 @@ const tasks = [
   { id: "t3", title: "程序输出题（结果推导）", meta: "5 道 · 巩固" },
 ];
 
-const steps: PathStep[] = [
-  { id: "s1", title: "环境安装", slug: "install", status: "done", meta: "已完成" },
-  { id: "s2", title: "变量与数据类型", slug: "types", status: "doing", meta: "进行中" },
-  { id: "s3", title: "输入输出", slug: "io", status: "todo", meta: "待开始" },
-  { id: "s4", title: "运算符", slug: "ops", status: "locked", meta: "解锁条件：完成上一节" },
+const chapters: Chapter[] = [
+  {
+    id: "c1",
+    title: "基础入门",
+    subtitle: "环境 · 变量 · 输入输出",
+    slug: "types",
+    status: "doing",
+    prompt:
+      "award-winning concept art, dark minimal game level scene, futuristic learning hub, sleek matte black surfaces, soft volumetric lighting, subtle neon edge highlights, floating geometric panels, cinematic, ultra detailed, no text, no logos",
+  },
+  {
+    id: "c2",
+    title: "流程控制",
+    subtitle: "if · for · while",
+    slug: "if",
+    status: "todo",
+    prompt:
+      "award-winning concept art, dark minimal game level, corridor of branching paths, glowing decision gates, loop motifs, subtle neon lights, moody cinematic lighting, soft grain, ultra detailed, no text, no logos",
+  },
+  {
+    id: "c3",
+    title: "数据结构",
+    subtitle: "list · dict · set · tuple",
+    slug: "data-structures",
+    status: "locked",
+    prompt:
+      "award-winning concept art, dark minimal sci-fi vault, floating containers and crystalline cubes, organized grid, subtle neon accents, cinematic lighting, ultra detailed, no text, no logos",
+  },
+  {
+    id: "c4",
+    title: "面向对象",
+    subtitle: "class · 继承 · 多态",
+    slug: "oop",
+    status: "locked",
+    prompt:
+      "award-winning concept art, dark minimal workshop scene, modular machines, blueprint holograms, soft neon lines, cinematic lighting, ultra detailed, no text, no logos",
+  },
 ];
 
 export default async function Home() {
@@ -53,6 +85,9 @@ export default async function Home() {
               </Link>
               <Link href="/playground">
                 <NeonButton tone="ghost">打开 Playground</NeonButton>
+              </Link>
+              <Link href="/challenges">
+                <NeonButton tone="ghost">进入挑战</NeonButton>
               </Link>
             </div>
             <div className={styles.miniStats}>
@@ -94,7 +129,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <PathMap title="基础入门 · 关卡进度" steps={steps} />
+        <ChapterMap chapters={chapters} />
 
         <div className={styles.grid}>
           <Card>

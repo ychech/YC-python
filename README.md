@@ -11,7 +11,16 @@ npm install
 npm run dev
 ```
 
-访问：http://localhost:3000
+访问：
+- 首页：http://localhost:3000
+- 挑战关卡：http://localhost:3000/challenges
+- 知识点示例：http://localhost:3000/learn/types
+
+如果 3000 被占用，换端口启动：
+
+```bash
+npm run dev -- --port 3001
+```
 
 ### 一键启动（即将补齐）
 

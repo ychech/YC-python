@@ -25,6 +25,9 @@ export function CommandBar() {
         </div>
 
         <nav className={styles.right} aria-label="主导航">
+          <Link className={cx(styles.navLink, styles.dim)} href="/challenges">
+            Challenges
+          </Link>
           <Link className={cx(styles.navLink, styles.dim)} href="/playground">
             Playground
           </Link>

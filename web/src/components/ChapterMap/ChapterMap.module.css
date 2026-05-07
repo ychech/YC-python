@@ -1,0 +1,238 @@
+.root {
+  border-radius: var(--radius-2);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.header {
+  padding: var(--s-4) var(--s-4) var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--border-2);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+}
+
+.hKicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: rgba(235, 242, 255, 0.56);
+}
+
+.hTitle {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+}
+
+.hSub {
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(235, 242, 255, 0.6);
+}
+
+.map {
+  position: relative;
+  padding: var(--s-4);
+  display: grid;
+  gap: 18px;
+}
+
+.spine {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  transform: translateX(-0.5px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0.8;
+}
+
+.spine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(124, 92, 255, 0), rgba(124, 92, 255, 0.32), rgba(124, 92, 255, 0));
+  filter: blur(10px);
+  opacity: 0.6;
+  animation: glow 4.6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+.node {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.left {
+  justify-items: end;
+  padding-right: calc(50% + 22px);
+}
+
+.right {
+  justify-items: start;
+  padding-left: calc(50% + 22px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-pill);
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(5, 6, 10, 0.55);
+  backdrop-filter: blur(12px);
+  margin-bottom: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(235, 242, 255, 0.36);
+}
+
+.badgeText {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: rgba(235, 242, 255, 0.72);
+}
+
+.badge_done .dot {
+  background: rgba(55, 214, 122, 0.92);
+}
+
+.badge_doing .dot {
+  background: rgba(124, 92, 255, 0.92);
+}
+
+.badge_locked .dot {
+  background: rgba(235, 242, 255, 0.14);
+}
+
+.card {
+  width: min(520px, 100%);
+  border-radius: var(--radius-2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 92, 255, 0.22);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cardLocked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cardTop {
+  padding: 14px 14px 0 14px;
+}
+
+.cardTitle {
+  font-weight: 760;
+  letter-spacing: -0.02em;
+}
+
+.cardSub {
+  margin-top: 8px;
+  color: rgba(235, 242, 255, 0.6);
+  font-size: 13px;
+}
+
+.scene {
+  margin-top: 12px;
+  position: relative;
+  height: 190px;
+}
+
+.sceneImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.06) saturate(0.92);
+}
+
+.sceneOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 6, 10, 0), rgba(5, 6, 10, 0.92));
+}
+
+.ctaRow {
+  padding: 12px 14px 14px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cta {
+  font-weight: 700;
+  color: rgba(235, 242, 255, 0.82);
+}
+
+.ctaHint {
+  font-family: var(--mono);
+  color: rgba(235, 242, 255, 0.56);
+}
+
+.spark {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  transform: translateX(-7px);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(5, 6, 10, 0.86);
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.12), 0 0 22px rgba(124, 92, 255, 0.24);
+}
+
+@media (max-width: 980px) {
+  .spine {
+    left: 12px;
+    transform: none;
+  }
+
+  .left,
+  .right {
+    justify-items: start;
+    padding: 0 0 0 28px;
+  }
+
+  .spark {
+    left: 12px;
+    transform: translateX(-7px);
+  }
+}
+
